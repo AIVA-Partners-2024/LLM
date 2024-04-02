@@ -16,7 +16,7 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 lida = Manager(text_gen=llm("openai"))
 textgen_config = TextGenerationConfig(n=1, temperature=0.5, model="gpt-3.5-turbo", use_cache=True)
 
-file_path = r"C:\Users\nakul.vasani\OneDrive - AIVA Partners Pvt. Ltd\Desktop\test-data.csv"
+file_path = r"test-data.csv"
 
 # Function to convert base64 string to Image
 def base64_to_image(base64_string):
@@ -131,7 +131,7 @@ def process_user_input(user_input, context, chat_container, regenerate):
 
 def generate_and_display_graph(user_input):
     # Assuming lida.summarize and lida.visualize are defined elsewhere
-    csv_path = r"C:\Users\nakul.vasani\OneDrive - AIVA Partners Pvt. Ltd\Desktop\test-data.csv"  # Adjust the path as necessary
+    csv_path = r"test-data.csv"  # Adjust the path as necessary
     summary = lida.summarize(csv_path, summary_method="default", textgen_config=textgen_config)  # Ensure textgen_config is defined
     charts = lida.visualize(summary=summary, goal=user_input, textgen_config=textgen_config)
     if charts:
