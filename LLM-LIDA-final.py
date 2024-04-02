@@ -1,7 +1,7 @@
 import streamlit as st
 import openai
 import pandas as pd
-import psycopg2
+#import psycopg2
 from PIL import Image
 import os
 from openai import OpenAI
