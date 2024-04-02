@@ -151,7 +151,7 @@ def main():
     with col1:
         st.title("Credit Union Benchmark BI")
     with col2:
-        logo = Image.open(r"C:\Users\nakul.vasani\OneDrive - AIVA Partners Pvt. Ltd\Desktop\WorkingLLM\AIVA-logo.png")  # Adjust the path as necessary
+        logo = Image.open(r"AIVA-logo.png")  # Adjust the path as necessary
         st.image(logo, width=130)
 
     # Horizontal line to separate title
