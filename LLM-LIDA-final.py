@@ -125,9 +125,10 @@ def process_user_input(user_input, context, chat_container, regenerate):
             st.markdown(f"**Conversational BI**: {message['bot']}")
             st.markdown("---")
 
-            # If this is the most recent interaction, display the graph below it
-            if i == len(st.session_state['chat_history']) - 1:
+            # Check if the user input contains any of the keywords and this is the most recent interaction
+            if i == len(st.session_state['chat_history']) - 1 and any(keyword in user_input.lower() for keyword in ["plot", "graph", "chart"]):
                 generate_and_display_graph(user_input)
+
 
 def generate_and_display_graph(user_input):
     # Assuming lida.summarize and lida.visualize are defined elsewhere
