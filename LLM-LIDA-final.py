@@ -121,8 +121,13 @@ def process_user_input(user_input, context, chat_container, regenerate):
     chat_container.empty()
     with chat_container:
         for i, message in enumerate(st.session_state.get('chat_history', [])):
-            st.markdown(f"**User**: {message['user']}")
-            st.markdown(f"**Conversational BI**: {message['bot']}")
+            # Using a <span> tag to style the emoji and text with a larger font size
+            user_message = f'<span style="font-size: 24px;">👤</span>: {message["user"]}'
+            bot_message = f'<span style="font-size: 24px;">🧠</span>: {message["bot"]}'
+            
+            # Using st.markdown to render the styled message with unsafe_allow_html=True to enable HTML rendering
+            st.markdown(user_message, unsafe_allow_html=True)
+            st.markdown(bot_message, unsafe_allow_html=True)
             st.markdown("---")
 
             # Check if the user input contains any of the keywords and this is the most recent interaction
@@ -178,8 +183,13 @@ def main():
         if 'chat_history' not in st.session_state:
             st.session_state['chat_history'] = [{'user': "Hi", 'bot': "Hello! Ask me anything about your data 🤗"}]
             for i, message in enumerate(st.session_state.get('chat_history', [])):
-                st.markdown(f"**User**: {message['user']}")
-                st.markdown(f"**Conversational BI**: {message['bot']}")
+                # Using a <span> tag to style the emoji and text with a larger font size
+                user_message = f'<span style="font-size: 24px;">👤</span>: {message["user"]}'
+                bot_message = f'<span style="font-size: 24px;">🧠</span>: {message["bot"]}'
+                
+                # Using st.markdown to render the styled message with unsafe_allow_html=True to enable HTML rendering
+                st.markdown(user_message, unsafe_allow_html=True)
+                st.markdown(bot_message, unsafe_allow_html=True)
                 st.markdown("---")
 
         # Functionality to start a new chat
@@ -188,8 +198,13 @@ def main():
             # Optional: Redirect or refresh the page to start fresh
             # st.experimental_rerun()
             for i, message in enumerate(st.session_state.get('chat_history', [])):
-                st.markdown(f"**User**: {message['user']}")
-                st.markdown(f"**Conversational BI**: {message['bot']}")
+                # Using a <span> tag to style the emoji and text with a larger font size
+                user_message = f'<span style="font-size: 24px;">👤</span>: {message["user"]}'
+                bot_message = f'<span style="font-size: 24px;">🧠</span>: {message["bot"]}'
+                
+                # Using st.markdown to render the styled message with unsafe_allow_html=True to enable HTML rendering
+                st.markdown(user_message, unsafe_allow_html=True)
+                st.markdown(bot_message, unsafe_allow_html=True)
                 st.markdown("---")
             
 
